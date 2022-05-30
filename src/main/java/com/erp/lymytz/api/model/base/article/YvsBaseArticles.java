@@ -26,6 +26,10 @@ import com.erp.lymytz.api.converter.base.tiers.ConverterTiers;
 import com.erp.lymytz.api.model.YvsAlias;
 import com.erp.lymytz.api.model.YvsEntity;
 import com.erp.lymytz.api.model.base.YvsBaseUniteMesure;
+import com.erp.lymytz.api.model.base.article.param.YvsBaseArticlesTemplate;
+import com.erp.lymytz.api.model.base.article.param.YvsBaseClassesStat;
+import com.erp.lymytz.api.model.base.article.param.YvsBaseFamilleArticle;
+import com.erp.lymytz.api.model.base.article.param.YvsBaseGroupesArticle;
 import com.erp.lymytz.api.model.base.tiers.YvsBaseTiers;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

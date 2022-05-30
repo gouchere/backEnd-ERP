@@ -1,31 +1,33 @@
 package com.erp.lymytz.api.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
-import com.erp.lymytz.api.model.base.YvsUsersAgence;
+import com.erp.lymytz.api.converter.base.ConverterAuthor;
+import com.erp.lymytz.api.model.base.users.YvsUsersAgence;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-public class YvsEntity {
-	
+@MappedSuperclass
+public abstract class YvsEntity implements Serializable {
+
     @Column(name = "date_update")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateUpdate;
+    protected Date dateUpdate;
     @Column(name = "date_save")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateSave = new Date();
-    
+	protected Date dateSave = new Date();
+
     @JoinColumn(name = "author")
     @ManyToOne(fetch = FetchType.LAZY)
-	private YvsUsersAgence author;
-	
+	@JsonSerialize(converter = ConverterAuthor.class)
+	protected YvsUsersAgence author;
+
 	public YvsEntity() {
 		// TODO Auto-generated constructor stub
+		this.dateSave = new Date();
+		this.dateUpdate = new Date();
 	}
 
 	public YvsUsersAgence getAuthor() {
@@ -51,5 +53,5 @@ public class YvsEntity {
 	public void setDateUpdate(Date dateUpdate) {
 		this.dateUpdate = dateUpdate;
 	}
-	
+
 }

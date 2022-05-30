@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.erp.lymytz.api.model.base.YvsAgences;
-import com.erp.lymytz.api.model.base.YvsSocietes;
+import com.erp.lymytz.api.model.param.YvsAgences;
+import com.erp.lymytz.api.model.param.YvsSocietes;
 import com.erp.lymytz.api.model.base.emplacement.YvsBaseDepots;
 
 

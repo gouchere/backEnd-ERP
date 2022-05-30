@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.erp.lymytz.api.model.ResultAction;
-import com.erp.lymytz.api.model.base.YvsSocietes;
+import com.erp.lymytz.api.model.param.YvsSocietes;
 import com.erp.lymytz.api.model.base.article.YvsBaseArticles;
 import com.erp.lymytz.api.service.base.article.IArticles;
 
@@ -24,9 +24,9 @@ import com.erp.lymytz.api.service.base.article.IArticles;
 @RequestMapping("lymytz_erp/articles")
 public class ArticlesController {
 
-	@Autowired 
+	@Autowired
 	IArticles service;
-	
+
 	@GetMapping("/")
 	public List<YvsBaseArticles> findAll(){
 		try {
@@ -37,7 +37,7 @@ public class ArticlesController {
 		}
 		return null;
 	}
-	
+
 	@GetMapping("/by_societe/{societe}")
 	public List<YvsBaseArticles> findAll(@PathVariable("societe") Integer societe){
 		try {
@@ -48,32 +48,32 @@ public class ArticlesController {
 		}
 		return null;
 	}
-	
+
 	@GetMapping("/{id}")
 	public YvsBaseArticles findOne(@PathVariable("id") Long id) throws Exception{
 		return service.findById(id);
 	}
-	
+
 	@PostMapping("/")
 	public ResultAction<YvsBaseArticles> save(@RequestBody YvsBaseArticles entity) throws Exception{
 		return service.save(entity);
 	}
-	
+
 	@PutMapping("/{id}")
 	public ResultAction<YvsBaseArticles> update(@PathVariable("id") Long id, @RequestBody YvsBaseArticles entity) throws Exception {
 		return service.update(id, entity);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public ResultAction<YvsBaseArticles> delete(@PathVariable("id") Long id) throws Exception {
 		return service.delete(id);
 	}
-	
+
 	@PostMapping("/updates")
 	public ResultAction<List<YvsBaseArticles>> updateMany(@RequestBody List<YvsBaseArticles> entities) throws Exception {
 		return service.updateMany(entities);
 	}
-	
+
 	@PostMapping("/deletes")
 	public ResultAction<List<YvsBaseArticles>> deleteMany(@RequestBody List<YvsBaseArticles> entities) throws Exception {
 		return service.deleteMany(entities);

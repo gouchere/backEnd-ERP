@@ -1,6 +1,6 @@
 package com.erp.lymytz.api.converter.base.article;
 
-import com.erp.lymytz.api.model.base.article.YvsBaseGroupesArticle;
+import com.erp.lymytz.api.model.base.article.param.YvsBaseGroupesArticle;
 import com.fasterxml.jackson.databind.util.StdConverter;
 
 public class ConverterGroupesArticle extends StdConverter<YvsBaseGroupesArticle, YvsBaseGroupesArticle> {

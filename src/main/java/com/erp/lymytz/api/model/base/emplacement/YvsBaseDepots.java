@@ -17,9 +17,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 
-import com.erp.lymytz.api.converter.base.ConverterAgence;
+import com.erp.lymytz.api.converter.param.ConverterAgence;
 import com.erp.lymytz.api.model.YvsEntity;
-import com.erp.lymytz.api.model.base.YvsAgences;
+import com.erp.lymytz.api.model.param.YvsAgences;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import lombok.Data;

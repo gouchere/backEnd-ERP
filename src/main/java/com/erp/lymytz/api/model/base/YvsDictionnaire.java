@@ -22,7 +22,7 @@ import lombok.Data;
 public class YvsDictionnaire extends YvsEntity implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Column(name = "id")
@@ -100,7 +100,11 @@ public class YvsDictionnaire extends YvsEntity implements Serializable {
 		YvsDictionnaire other = (YvsDictionnaire) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "com.erp.lymytz.api.model.base.YvsDictionnaire[ id=" + id + " ]";
+	}
+
 
 }
